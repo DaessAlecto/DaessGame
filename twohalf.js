@@ -71,10 +71,17 @@
 			println(text);
 			setF(0);
 			setX(0);
+			massWeight();
 			arrET = [true, true, true, true, true, true, true, true, true];
 			arrEvents[numE] = true;
 		}
 	}
+	
+	function massWeight(){
+		let mass = m + x + f;
+			println('\n' + '>' + docInput.value + '\n' + 'Теперь лев весит ' + mass + ' кг' + ' (' + m + ' кг. '+ x + ' кг в животе. ' + f + ' кг жира.');
+	}
+	
 	//Эвент при достижении цифры выдаёт текст и 
 	function eventText(i1, i2, text, arrEvents, numE){
 		if (i1 >= i2 && arrEvents[numE]){
@@ -123,17 +130,21 @@
 			break;
 			case '5 кг':
 				setX(x+5);
+				massWeight();
 			break;
 			case '10 кг':
 				setX(x+10);
+				massWeight();
 			break;
 			case 'отдых':
 			if (x > 0 ){
 				setX(x-1);
 				setF(f+1);
 				println('\n' + 'Лев отдыхает и стал жирнее. жира в льве ' + f + ' кг');
+				massWeight();
 			} else {
 				setM(m-1);
+				massWeight();
 			}
 				
 			break;
@@ -151,24 +162,82 @@
 				if (x >= 1){
 					setM(m+1);
 					setX(x-1);
+					massWeight();
 				}
 				
 			break;
 			case 'переидти':
 				println("вы сейчас находитесь в " + 	playerPosition );
-				setHyperText (['Кухня', 'Коридор', 'Туалет', 'Зал' ]);
-				setHyperTitle (['Кухня', 'Коридор', 'Туалет', 'Зал' ]);
+				switch (playerPosition) {
+					case 'кухня':
+					case 'коридор':
+					case 'туалет':
+						setHyperText (['Зал']);
+						setHyperTitle (['Зал']);
+					break;
+					case 'зал':
+						setHyperText (['Кухня', 'Коридор', 'Туалет']);
+						setHyperTitle (['Кухня', 'Коридор', 'Туалет']);
+					break;
+				}
 			break;
 			case 'телефон':
 				println('Лев берёт телефон и выбирает кому позвонить. ');
-				setHyperText (['Пиццерия' ]);
-				setHyperTitle (['Пиццерия']);
+				setHyperText (['Пиццерия', 'триш' ]);
+				setHyperTitle (['Пиццерия', 'триш' ]);
 			break;
+			
+			
+		}
+	}
+	/*
+	==========
+	Опции телефона !!
+	==========
+	*/
+	
+	function phoneOptions(str){
+		switch (str) {
 			case 'пиццерия':
 				println('Лев заказывает пиццу и ожидает, в дверь постучали. открыть дверь?');
 				setHyperText (['Открыть']);
 				setHyperTitle (['Открыть']);
 			break;
+			case 'триш':
+				println('Лев завт триш в гости и ожидает, в дверь постучали. открыть дверь?');
+				setHyperText (['Открыть дверь']);
+				setHyperTitle (['Открыть дверь']);
+			break;
+		}
+	}
+	/*
+	==========
+	Вызов триш !!
+	==========
+	*/
+	
+	function trishOptions(str){
+		switch (str) {
+			case 'открыть дверь':
+				println('Лев открыл дверь и видит за ей тришь и пришлошает к себе раздеваясь, тришь тоже не теряет время и обнажается. ');
+				setHyperText (['Сооблазнить']);
+				setHyperTitle (['Сооблазнить']);
+			break;
+			case 'сооблазнить':
+				println('Лев набрасывается на тришь и неистово имеет её как хочет а та и не против. насладившись компанией тришь лев урча благодорит её за то что она пришла и возвращяется к своим делам. ');
+				setHyperText (arrHTT1);
+				setHyperTitle (arrHTE1);
+			break;
+		}
+	}
+	
+	/*
+	==========
+	Вызов пицци !!
+	==========
+	*/
+	function pizzaOptions(str){
+		switch (str) {
 			case 'открыть':
 				println('Лев открыл дверь и видит за ей разнощика пицци ');
 				setHyperText (['Сьесть']);
@@ -177,14 +246,16 @@
 			case 'сьесть':
 				println('Лев открыл пасть и заглотил пиццу что в лапах самца а после и самого самца вместе с пицей и закрыв дверь вернулся к своим делам. ');
 				setX(x+100);
+				massWeight();
 				setHyperText (arrHTT1);
 				setHyperTitle (arrHTE1);
 			break;
 		}
 	}
+	
 	/*
 	==========
-	Двидение!!
+	Двидение по квартире!!
 	==========
 	*/
 	function optionMove(str){
@@ -253,18 +324,21 @@
 			case 'в попку':
 				println('Лев доволен, жертва отправилась в попку!');
 				setX(x+100);
+				massWeight();
 				setHyperText (arrHTT2);
 				setHyperTitle (arrHTE2);
 			break;
 			case 'в пасть':
 				println('Лев доволен, жертва отправилась в пасть!');
 				setX(x+100);
+				massWeight();
 				setHyperText (arrHTT2);
 				setHyperTitle (arrHTE2);
 			break;
 			case 'в член':
 				println('Лев доволен, жертва отправилась в член!');
 				setX(x+100);
+				massWeight();
 				setHyperText (arrHTT2);
 				setHyperTitle (arrHTE2);
 			break;
@@ -339,14 +413,8 @@
 	function play() { // ну, тут начинается колдовство
 		setDocInput();
         setInputValue(docInput.value.toLowerCase());
-		optionMove(inputValue);
-		options(inputValue);
-		options2(inputValue);
-		options3(inputValue);
-		options4(inputValue);
-		//optionsDefault(inputValue);
-		let mass = m + x + f;
-		println('\n' + '>' + docInput.value + '\n' + 'Теперь лев весит ' + mass + ' кг' + ' (' + m + ' кг. '+ x + ' кг в животе. ' + f + ' кг жира.');
+
+		
 		eventText(x, 10, 'Слышен небольшой треск. ',arrET ,0 );
 		eventText(x, 20, 'Треск становится громче . ',arrET ,1 );
 		eventText(x, 30, 'Животик льва начал выпирать активнее и футболка начала рваться . ',arrET ,2 );
@@ -360,6 +428,15 @@
 		cap(x, 1000, ' \n лев настолько растолстел и лёг спать, а когда проснулся - был как прежде. (временное игровое ограничение)');
 		cap(50, 100 + x, ' \n Кажется лев сильно потерял мышечную массу, от чего направился это исправлять и вернулся как прежде.');
 		cap(f, 50, ' \n Кажется лев сильно растолстел и отправился сбрасывать жир. (временное игровое ограничение)');
+		optionMove(inputValue);
+		phoneOptions(inputValue);
+		pizzaOptions(inputValue);
+		trishOptions(inputValue)
+		options(inputValue);
+		options2(inputValue);
+		options3(inputValue);
+		options4(inputValue);
+		//optionsDefault(inputValue);
 		docInput.value = '';
 		scrollTextArea();
     }
@@ -374,6 +451,7 @@
 		//localStorage.clear(); //Типо чтобы почистить кеш дял проверок
 		if	(m == 0 ){
 			m = 100;
+			massWeight();
 		}
 		textStartDialog = 'Хотите покормить льва?';
 		println(textStartDialog);
