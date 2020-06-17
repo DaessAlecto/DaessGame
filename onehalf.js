@@ -21,6 +21,62 @@
 		hyperText9: document.getElementById('hyperText9'),
 		hyperText10: document.getElementById('hyperText10')
 	};
+	
+	function gameTime(time){
+		var i0 = 0;
+		var i1 = 0;
+		var i2 = 0;
+		var i3 = 0;
+		var iTimeMinute = 0;
+		var iTimeHour = 0;
+		var iTimeDay = 0;
+		var progresselement0 = document.getElementById('timeProgress0');
+		var progresselement1 = document.getElementById('timeProgress1');
+		var progresselement2 = document.getElementById('timeProgress2');
+		var progresselement3 = document.getElementById('timeProgress3');
+		var textTime = document.getElementById('textTime');
+		var textTimeHour = document.getElementById('textTimeHour');
+		var textTimeDay = document.getElementById('textTimeDay');
+			setInterval(function(){
+				if (i0 < 4){
+					i0++;
+					progresselement0.value = i0;
+				} else if (i1 < 4){
+					i1++;
+					progresselement1.value = i1;
+				} else if (i2 < 4){
+					i2++;
+					progresselement2.value = i2;
+				} else if (i3 < 4){
+					i3++;
+					progresselement3.value = i3;
+				} else {
+					i0 = 0;
+					i1 = 0;
+					i2 = 0;
+					i3 = 0;
+					progresselement0.value = i0;
+					progresselement1.value = i1;
+					progresselement2.value = i2;
+					progresselement3.value = i3;
+					if (iTimeMinute <= 59){
+						iTimeMinute++ ;
+						textTime.innerHTML = iTimeMinute + " m. " + iTimeHour + " h. " + iTimeDay + " d. ";
+						
+					} else if (iTimeHour <= 23){
+						iTimeMinute = 0;
+						iTimeHour++ ;
+						textTimeHour.innerHTML = iTimeHour;
+					} else if (iTimeDay <= 30){
+						iTimeHour = 0;
+						iTimeDay++ ;
+						textTimeDay.innerHTML = iTimeDay;
+					}
+				}
+			},time); 
+	}
+	gameTime(250);
+	
 	//Присоение из поля input
 	//(помоему это не нужно)
 	function setDocInput(){
