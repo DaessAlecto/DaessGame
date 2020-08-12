@@ -13,11 +13,24 @@
 	var i1 = 0;
 	var i2 = 0;
 	var i3 = 0;
-	var iTimeMinute = 0;
-	var iTimeHour = 0;
-	var iTimeDay = 0;
+	var iTimeMinute = +0;
+	var iTimeHour = +0;
+	var iTimeDay = +0;
 	var mainTextArea = document.getElementById('mainTextArea');
-		
+	const htmlElement = {
+		hyperText1: document.getElementById('hyperText1'),
+		hyperText2: document.getElementById('hyperText2'),
+		hyperText3: document.getElementById('hyperText3'),
+		hyperText4: document.getElementById('hyperText4'),
+		hyperText5: document.getElementById('hyperText5'),
+		hyperText6: document.getElementById('hyperText6'),
+		hyperText7: document.getElementById('hyperText7'),
+		hyperText8: document.getElementById('hyperText8'),
+		hyperText9: document.getElementById('hyperText9'),
+		hyperText10: document.getElementById('hyperText10')
+	};
+	var art = document.getElementById('art');
+	
 	function gameTime(time){
 		setInterval(function(){
 			if (i0 < 4){
@@ -77,19 +90,7 @@
 			docInput.value = n;
 		}
     } 
-	// вставляет в массив с именем key1 то что в arrNewtext. text что будет виден игроку
-	const htmlElement = {
-		hyperText1: document.getElementById('hyperText1'),
-		hyperText2: document.getElementById('hyperText2'),
-		hyperText3: document.getElementById('hyperText3'),
-		hyperText4: document.getElementById('hyperText4'),
-		hyperText5: document.getElementById('hyperText5'),
-		hyperText6: document.getElementById('hyperText6'),
-		hyperText7: document.getElementById('hyperText7'),
-		hyperText8: document.getElementById('hyperText8'),
-		hyperText9: document.getElementById('hyperText9'),
-		hyperText10: document.getElementById('hyperText10')
-	};
+	
 		//?? создать хтмл элемент? Хавает один массив, перебирает в другой массив и выплёвывает иной массив?
 	let arr = ['','','','','','','','','',''];
 	function createArrNameFromObjHtmlElement(){ //objToArr
