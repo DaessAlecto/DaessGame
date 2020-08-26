@@ -9,14 +9,14 @@
 		<table>
 			<tr>
 				<td>
-					<a href="https://vk.com/club166581091" title='Группа проекта в ВК' target="_blank" >Посетить группу в ВК: vk.com/club166581091</a>
-					<a>И тем самым</a>
-					<a href="https://vk.com/club166581091?w=app5727453_-166581091" title='Поддержать проект через ВК' target="_blank" >Поддержать проект</a>
+					<a class='text' href="https://vk.com/club166581091" title='Группа проекта в ВК' target="_blank" >Посетить группу в ВК: vk.com/club166581091</a>
+					<a class='text'>И тем самым</a>
+					<a class='text' href="https://vk.com/club166581091?w=app5727453_-166581091" title='Поддержать проект через ВК' target="_blank" >Поддержать проект</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<textarea cols='115' id='mainTextArea' readonly='readonly' rows='20'></textarea>
+					<textarea class='text' cols='115' id='mainTextArea' readonly='readonly' rows='20'></textarea>
 				</td>
 				<td>
 					<table>
@@ -38,7 +38,7 @@
 						<tr>
 							<td>
 								<progress id='timeProgress3' value='0' max='4'>1</progress>
-								<p  id='textTime'>0 m. 0 h. 0 d.</p >
+								<p class='text' id='textTime'>0 m. 0 h. 0 d.</p >
 							</td>
 						</tr>
 					</table>
@@ -46,72 +46,49 @@
 			</tr>
 			<tr>
 				<td>
-					<input id='input' name='pole' size='115' type='text' readonly='readonly' value='' />
+					<input class='text' id='input' name='pole' size='115' type='text' readonly='readonly' value='' />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input id='myIn' type='button' value='Ввод(Enter)' onclick='play()' />
+					<input class='text' id='myIn' type='button' value='Ввод(Enter)' onclick='play()' />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a id='hyperText1' href="javascript:hyperTextDo(hyperText1.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText2' href="javascript:hyperTextDo(hyperText2.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText3' href="javascript:hyperTextDo(hyperText3.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText4' href="javascript:hyperTextDo(hyperText4.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText5' href="javascript:hyperTextDo(hyperText5.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText6' href="javascript:hyperTextDo(hyperText6.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText7' href="javascript:hyperTextDo(hyperText7.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText8' href="javascript:hyperTextDo(hyperText8.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText9' href="javascript:hyperTextDo(hyperText9.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a id='hyperText10' href="javascript:hyperTextDo(hyperText10.text)" title='Умм.. вы трогаете мою кнопочку' ></a>
+				<div class='actions text'> 
+					<a class='action-Element' id='hyperText1' href="javascript:hyperTextDo(hyperText1.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText2' href="javascript:hyperTextDo(hyperText2.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText3' href="javascript:hyperTextDo(hyperText3.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText4' href="javascript:hyperTextDo(hyperText4.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText5' href="javascript:hyperTextDo(hyperText5.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText6' href="javascript:hyperTextDo(hyperText6.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText7' href="javascript:hyperTextDo(hyperText7.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText8' href="javascript:hyperTextDo(hyperText8.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText9' href="javascript:hyperTextDo(hyperText9.text)" ></a>
+					<br>
+					<a class='action-Element' id='hyperText10' href="javascript:hyperTextDo(hyperText10.text)" ></a>
+				</div>
 				</td>
 			</tr>
 		</table>
 
 		<p><img id='art' height='400' align='absmiddle' border='0' src='' /></p>
-
-		
-
-			<!-- Обьявления -->
+			<!--CSS-->
+		<link rel='stylesheet' href='style.css'></link>
+			<!-- визуал -->
 		<script src="onehalf.js"></script>
+			<!-- Персонажи -->
+		<script src="npc/shen.js"></script>
+		<script src="npc/musicBox.js"></script>
 			<!-- Движущие части кода -->
 		<script src="twohalf.js"></script>
 		<!--

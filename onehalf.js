@@ -92,7 +92,7 @@
     } 
 	
 		//?? создать хтмл элемент? Хавает один массив, перебирает в другой массив и выплёвывает иной массив?
-	let arr = ['','','','','','','','','',''];
+	let arr = new Array(10);
 	function createArrNameFromObjHtmlElement(){ //objToArr
 		let obj = htmlElement;
 		for (let i = 0; i < arr.length; i++){
@@ -122,3 +122,35 @@
 	function setHyperTitle(arrTitle) { 
 		setTextToHtmlElement(arrTitle, 'title');
 	}
+class Dialog{
+	choice(){
+		throw 'не нашел choice()';
+	}
+	entry(){
+		throw 'Не нашел entry()';
+	}
+}
+const dialog = {};
+
+class None extends Dialog{
+	text ;
+	hyperText ; 
+	
+	entry(){
+
+	}
+	choice(str) {
+		
+	}
+}
+dialog['none'] = new None();
+
+class Player {
+		health = 10;
+		// Идея: добавить energy endurance
+	}
+	
+var player = new Player();
+var currentInterlocutor = 'none'; // Обжест?
+var currentDialog = dialog['none']; //= obj;
+	
