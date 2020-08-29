@@ -1,18 +1,3 @@
-var arrHTT1 = ['Переидти', 'Персонажи', 'Шен', 'Телевизор', 'Шкатулка']; //['Переидти', 'Алон', '5 кг', '10 кг', 'Отдых', 'Спорт', 'Самца', 'Телефон', 'Персонажи'];
-
-
-
-
-function shen(str){
-	switch (str) {
-		case 'шен':
-			dialog['shen.hi'].entry();
-		break; 
-		default:
-		currentDialog.choice(inputValue);
-	}
-}
-
 class Shen_Hi extends Dialog{
 	text = '*Вы смотрите на шена.* \nВы: Хэй шен! \nШен: хай.';
 	hyperText = ['Осмотреть шена', 'Всё ок шен, я закончил' ]; 
@@ -106,3 +91,9 @@ dialog['shen.exit'] = new Shen_Exit();
 
 
 // https://www.youtube.com/watch?v=0ZCcUwiqOfA
+
+/*
+		=============
+		Опция с шеном.
+		=============
+		*/

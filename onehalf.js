@@ -145,6 +145,7 @@ class None extends Dialog{
 }
 dialog['none'] = new None();
 
+
 class Player {
 		health = 10;
 		// Идея: добавить energy endurance
@@ -153,4 +154,4 @@ class Player {
 var player = new Player();
 var currentInterlocutor = 'none'; // Обжест?
 var currentDialog = dialog['none']; //= obj;
-	
+
